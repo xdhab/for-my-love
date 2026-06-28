@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>С Днём Рождения, Настя! 💖</title>
+  <title>С Днём Рождения, моя Киса! 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    /* все стили остаются те же, что были в первом коде */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Montserrat', sans-serif;
@@ -131,49 +130,60 @@
 </head>
 <body>
   <audio id="bg-music" loop>
-    <!-- ЗАМЕНИ НА СВОЙ ФАЙЛ: <source src="song.mp3" type="audio/mpeg"> -->
     <source src="song.mp3" type="audio/mpeg">
     Твой браузер не поддерживает аудио.
   </audio>
 
-  <button class="music-btn" id="music-toggle" title="Включить музыку">🎵</button>
+  <button class="music-btn" id="music-toggle" title="Включить / выключить музыку">🎵</button>
   <div class="hearts-container" id="hearts-container"></div>
 
+  <!-- Главный экран -->
   <section class="hero">
     <div class="hero-content">
-      <h1>С Днём Рождения,<br>Настя!</h1>
-      <div class="subtitle">✨ Ты — моё самое большое счастье ✨</div>
+      <h1>С Днём Рождения,<br>моя Киса! 💖</h1>
+      <div class="subtitle">✨ Ты — моя самая сладкая булочка на свете ✨</div>
     </div>
     <div class="scroll-down" onclick="document.querySelector('.gallery').scrollIntoView({behavior:'smooth'})">↓</div>
   </section>
 
+  <!-- Галерея с вашими фото -->
   <section class="gallery">
     <h2>Наши мгновения</h2>
     <div class="photos">
       <div class="photo-card">
-        <img src="https://placehold.co/400x400/ffb3c6/white?text=Мы+вместе" alt="Фото 1">
-        <div class="caption">Наше первое свидание</div>
+        <img src="my/photo_2024-08-31_01-40-35.jpg" alt="Моя лапка любимая">
+        <div class="caption">Моя лапка любимая</div>
       </div>
       <div class="photo-card">
-        <img src="https://placehold.co/400x400/ff8da1/white?text=Счастье" alt="Фото 2">
-        <div class="caption">Твоя улыбка</div>
+        <img src="my/photo_2024-08-31_01-42-34.jpg" alt="Тортик">
+        <div class="caption">Тортик 🍰</div>
       </div>
       <div class="photo-card">
-        <img src="https://placehold.co/400x400/ffb3c6/white?text=Люблю" alt="Фото 3">
+        <img src="my/photo_2026-03-09_07-32-32.jpg" alt="Мы вместе">
+        <div class="caption">Мы вместе</div>
+      </div>
+      <div class="photo-card">
+        <img src="my/photo_2026-04-08_15-33-28.jpg" alt="Зефирка моя">
+        <div class="caption">Зефирка моя</div>
+      </div>
+      <div class="photo-card">
+        <img src="my/photo_2026-04-08_16-00-07.jpg" alt="Каждый миг с тобой">
         <div class="caption">Каждый миг с тобой</div>
       </div>
     </div>
   </section>
 
+  <!-- Слайдер причин -->
   <section class="reasons">
     <h2>Ты невероятна, потому что...</h2>
-    <div class="reason-slider" id="reason-text">... твой смех лечит любую грусть.</div>
+    <div class="reason-slider" id="reason-text">... твой мурлык лечит любую грусть.</div>
     <div class="nav-arrows">
       <button onclick="prevReason()"><i class="fas fa-chevron-left"></i></button>
       <button onclick="nextReason()"><i class="fas fa-chevron-right"></i></button>
     </div>
   </section>
 
+  <!-- Таймер -->
   <section class="countdown">
     <h2 style="font-family:'Marck Script',cursive; font-size:2.5rem; color:#b13e5a;">🎂 Сегодня твой день!</h2>
     <p style="margin-bottom:10px; color:#5a2d3c;">Пусть он длится вечно...</p>
@@ -185,20 +195,43 @@
     <p style="margin-top:30px; color:#8a5a6a;">до конца этого волшебного дня 💫</p>
   </section>
 
+  <!-- Поздравление -->
   <section class="wish">
-    <p>Настя, сегодня особенный день — день, когда этот мир стал ярче, потому что в нём появилась ты. Ты удивительная: твоя нежность, твой смех, твоё умение видеть прекрасное даже в мелочах делают мою жизнь настоящей сказкой.</p>
-    <p>Я хочу, чтобы каждый твой день был наполнен теплом, улыбками и исполнением желаний. Пусть всё, о чём ты мечтаешь, обязательно сбудется. Ты заслуживаешь самого лучшего, и я счастлив быть рядом, делить с тобой радость и поддерживать в трудные минуты.</p>
-    <p>С днём рождения, моя прекрасная Настя! Оставайся такой же светлой, доброй и невероятно красивой. Я люблю тебя бесконечно. ❤️</p>
-    <div class="signature">— Твой Любимый кисик</div>
+    <p>Киса моя, солнышко, с днём рождения! 🎉</p>
+    <p>Ты — моя самая сладкая мандаринка, которую хочется целовать каждую секунду. Мой любимый ёжик, моя нежная зефирка и самый вкусный круасанчик. Рядом с тобой я самый счастливый тортик на свете.</p>
+    <p>Спасибо тебе за каждый мурлык, за каждое «ты моя булочка», за то, что ты просто есть. Ты делаешь этот мир уютным, как плед с чаем и мандаринами. Я хочу, чтобы ты всегда улыбалась, чувствовала себя самой любимой и никогда не сомневалась, что ты — моя единственная.</p>
+    <p>Пусть сбываются все твои мечты, даже самые смешные. Ты — волшебство, которое случилось со мной, мой абрикосик. С днём варенья, моя Киса! 💋</p>
+    <div class="signature">— Твой Кисик</div>
   </section>
 
   <script>
-    // === МУЗЫКА ===
+    // === МУЗЫКА с автозапуском при первом касании ===
     const music = document.getElementById('bg-music');
     const musicBtn = document.getElementById('music-toggle');
     let musicPlaying = false;
+    let musicStarted = false;
 
-    musicBtn.addEventListener('click', () => {
+    function startMusic() {
+      if (musicStarted) return;
+      music.play().then(() => {
+        musicPlaying = true;
+        musicBtn.innerHTML = '❤️';
+        musicBtn.classList.add('playing');
+        musicStarted = true;
+      }).catch(() => {}); // если юзер отменил – ничего
+    }
+
+    // Запускаем при первом любом клике/тапе на странице
+    document.addEventListener('click', startMusic, { once: true });
+    document.addEventListener('touchstart', startMusic, { once: true });
+
+    // Кнопка переключает play/pause
+    musicBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // чтобы не сработал автозапуск повторно
+      if (!musicStarted) {
+        startMusic();
+        return;
+      }
       if (musicPlaying) {
         music.pause();
         musicBtn.innerHTML = '🎵';
@@ -207,20 +240,20 @@
         music.play().then(() => {
           musicBtn.innerHTML = '❤️';
           musicBtn.classList.add('playing');
-        }).catch(e => console.log('Нажми на кнопку, чтобы включить музыку'));
+        });
       }
       musicPlaying = !musicPlaying;
     });
 
     // === СЛАЙДЕР ПРИЧИН ===
     const reasons = [
-      "... твой смех лечит любую грусть.",
+      "... твой мурлык лечит любую грусть.",
       "... ты умеешь слушать сердцем.",
       "... с тобой даже молчать уютно.",
-      "... ты вкусно пахнешь и обнимаешься.",
+      "... ты — самая вкусная булочка на свете.",
       "... твоя доброта не знает границ.",
-      "... ты умеешь поддержать в трудную минуту.",
-      "... ты — моя самая любимая сказка."
+      "... ты мой самый любимый ёжик.",
+      "... ты — моя сладкая сказка."
     ];
     let currentReason = 0;
     const reasonEl = document.getElementById('reason-text');
