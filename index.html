@@ -3,17 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>С Днём Рождения, любимая! 💖</title>
-  <!-- Подключаем шрифты и иконки -->
+  <title>С Днём Рождения, Настя! 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    /* все стили остаются те же, что были в первом коде */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Montserrat', sans-serif;
       overflow-x: hidden;
@@ -21,80 +16,35 @@
       color: #5a2d3c;
       scroll-behavior: smooth;
     }
-
-    /* Музыкальная кнопка */
     .music-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      z-index: 1000;
-      background: #ff7b9c;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      font-size: 24px;
-      cursor: pointer;
+      position: fixed; bottom: 25px; right: 25px; z-index: 1000;
+      background: #ff7b9c; color: white; border: none; border-radius: 50%;
+      width: 55px; height: 55px; font-size: 24px; cursor: pointer;
       box-shadow: 0 8px 20px rgba(255, 123, 156, 0.5);
       transition: transform 0.3s, background 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
     }
-
-    .music-btn:hover {
-      transform: scale(1.1);
-      background: #ff5c8a;
-    }
-
-    .music-btn.playing {
-      animation: pulse 1.2s infinite;
-    }
-
+    .music-btn:hover { transform: scale(1.1); background: #ff5c8a; }
+    .music-btn.playing { animation: pulse 1.2s infinite; }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(255, 92, 138, 0.6); }
       70% { box-shadow: 0 0 0 20px rgba(255, 92, 138, 0); }
       100% { box-shadow: 0 0 0 0 rgba(255, 92, 138, 0); }
     }
-
-    /* Главный экран */
     .hero {
       height: 100vh;
       background: linear-gradient(135deg, #ffd6e0, #ffb3c6);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      padding: 20px;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+      position: relative; overflow: hidden; padding: 20px;
     }
-
     .hero::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
+      content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
       background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.4) 0%, transparent 50%),
                   radial-gradient(circle at 70% 60%, rgba(255,235,240,0.5) 0%, transparent 50%);
       animation: rotateBg 25s linear infinite;
     }
-
-    @keyframes rotateBg {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      animation: fadeInUp 1.2s ease;
-    }
-
+    @keyframes rotateBg { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .hero-content { position: relative; z-index: 2; animation: fadeInUp 1.2s ease; }
     .hero h1 {
       font-family: 'Marck Script', cursive;
       font-size: clamp(3rem, 10vw, 5.5rem);
@@ -102,295 +52,101 @@
       text-shadow: 3px 3px 10px rgba(255, 90, 120, 0.5);
       margin-bottom: 15px;
     }
-
     .hero .subtitle {
-      font-size: 1.3rem;
-      letter-spacing: 2px;
-      font-weight: 300;
-      color: #ffffff;
-      background: rgba(255,255,255,0.2);
-      backdrop-filter: blur(5px);
-      padding: 12px 30px;
-      border-radius: 40px;
-      display: inline-block;
+      font-size: 1.3rem; letter-spacing: 2px; font-weight: 300;
+      color: #ffffff; background: rgba(255,255,255,0.2); backdrop-filter: blur(5px);
+      padding: 12px 30px; border-radius: 40px; display: inline-block;
     }
-
     .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      z-index: 2;
-      font-size: 2rem;
-      color: white;
-      animation: bounce 2s infinite;
-      cursor: pointer;
+      position: absolute; bottom: 30px; z-index: 2; font-size: 2rem; color: white;
+      animation: bounce 2s infinite; cursor: pointer;
     }
-
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(15px); }
     }
-
-    /* Секция галереи */
-    .gallery {
-      padding: 80px 20px;
-      background: #fff5f8;
-      text-align: center;
-    }
-
-    .gallery h2 {
-      font-family: 'Marck Script', cursive;
-      font-size: 2.8rem;
-      color: #d14b6a;
-      margin-bottom: 40px;
-    }
-
-    .photos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
+    .gallery { padding: 80px 20px; background: #fff5f8; text-align: center; }
+    .gallery h2 { font-family: 'Marck Script', cursive; font-size: 2.8rem; color: #d14b6a; margin-bottom: 40px; }
+    .photos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; max-width: 1000px; margin: 0 auto; }
     .photo-card {
-      width: 280px;
-      height: 280px;
-      border-radius: 25px;
-      overflow: hidden;
+      width: 280px; height: 280px; border-radius: 25px; overflow: hidden;
       box-shadow: 0 15px 30px rgba(255, 100, 130, 0.25);
-      transition: transform 0.4s ease, box-shadow 0.4s;
-      background: #fff;
-      position: relative;
+      transition: transform 0.4s ease, box-shadow 0.4s; background: #fff; position: relative;
     }
-
-    .photo-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 25px 40px rgba(255, 100, 130, 0.4);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-
-    .photo-card:hover img {
-      transform: scale(1.1);
-    }
-
+    .photo-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 25px 40px rgba(255, 100, 130, 0.4); }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .photo-card:hover img { transform: scale(1.1); }
     .photo-card .caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      position: absolute; bottom: 0; left: 0; right: 0;
       background: linear-gradient(transparent, rgba(0,0,0,0.5));
-      color: white;
-      padding: 20px 15px 15px;
-      font-weight: 500;
-      letter-spacing: 1px;
+      color: white; padding: 20px 15px 15px; font-weight: 500; letter-spacing: 1px;
       text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
-
-    /* Карусель причин */
-    .reasons {
-      padding: 80px 20px;
-      background: linear-gradient(180deg, #ffe9f0, #ffd6e0);
-      text-align: center;
-    }
-
-    .reasons h2 {
-      font-family: 'Marck Script', cursive;
-      font-size: 2.8rem;
-      color: #b13e5a;
-      margin-bottom: 40px;
-    }
-
+    .reasons { padding: 80px 20px; background: linear-gradient(180deg, #ffe9f0, #ffd6e0); text-align: center; }
+    .reasons h2 { font-family: 'Marck Script', cursive; font-size: 2.8rem; color: #b13e5a; margin-bottom: 40px; }
     .reason-slider {
-      max-width: 600px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 40px;
-      padding: 40px 30px;
-      box-shadow: 0 20px 35px rgba(200, 100, 120, 0.2);
-      font-size: 1.4rem;
-      font-weight: 300;
-      line-height: 1.6;
-      position: relative;
-      min-height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      max-width: 600px; margin: 0 auto; background: white; border-radius: 40px;
+      padding: 40px 30px; box-shadow: 0 20px 35px rgba(200, 100, 120, 0.2);
+      font-size: 1.4rem; font-weight: 300; line-height: 1.6; position: relative;
+      min-height: 150px; display: flex; align-items: center; justify-content: center;
       transition: all 0.4s ease;
     }
-
-    .nav-arrows {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
-
+    .nav-arrows { margin-top: 25px; display: flex; justify-content: center; gap: 30px; }
     .nav-arrows button {
-      background: #ff7b9c;
-      border: none;
-      color: white;
-      font-size: 1.8rem;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(255, 123, 156, 0.4);
-      transition: background 0.3s, transform 0.2s;
+      background: #ff7b9c; border: none; color: white; font-size: 1.8rem;
+      width: 50px; height: 50px; border-radius: 50%; cursor: pointer;
+      box-shadow: 0 5px 15px rgba(255, 123, 156, 0.4); transition: background 0.3s, transform 0.2s;
     }
-
-    .nav-arrows button:hover {
-      background: #ff4f7a;
-      transform: scale(1.1);
-    }
-
-    /* Секция с таймером (до конца ДР) */
-    .countdown {
-      padding: 80px 20px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffb3c6" opacity="0.15"><circle cx="20" cy="30" r="15"/><circle cx="75" cy="65" r="20"/><circle cx="40" cy="80" r="10"/></svg>') center/cover;
-      background-color: #fff;
-      text-align: center;
-    }
-
-    .timer-box {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
+    .nav-arrows button:hover { background: #ff4f7a; transform: scale(1.1); }
+    .countdown { padding: 80px 20px; background-color: #fff; text-align: center; }
+    .timer-box { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
     .timer-item {
-      background: white;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-      border-radius: 20px;
-      padding: 25px 20px;
-      min-width: 90px;
+      background: white; box-shadow: 0 15px 30px rgba(0,0,0,0.08); border-radius: 20px;
+      padding: 25px 20px; min-width: 90px;
     }
-
-    .timer-item span {
-      display: block;
-      font-size: 3rem;
-      font-weight: 700;
-      color: #d14b6a;
-    }
-
-    .timer-item .label {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #8a5a6a;
-      margin-top: 5px;
-    }
-
-    /* Пожелание */
-    .wish {
-      padding: 80px 20px;
-      background: linear-gradient(45deg, #ffb3c6, #ff8da1);
-      color: white;
-      text-align: center;
-    }
-
-    .wish p {
-      font-size: 1.5rem;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    .wish .signature {
-      font-family: 'Marck Script', cursive;
-      font-size: 2.5rem;
-      margin-top: 30px;
-      opacity: 0.9;
-    }
-
-    /* Сердечки-частицы */
-    .hearts-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 999;
-    }
-
+    .timer-item span { display: block; font-size: 3rem; font-weight: 700; color: #d14b6a; }
+    .timer-item .label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #8a5a6a; margin-top: 5px; }
+    .wish { padding: 80px 20px; background: linear-gradient(45deg, #ffb3c6, #ff8da1); color: white; text-align: center; }
+    .wish p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 20px; line-height: 1.8; font-weight: 300; }
+    .wish .signature { font-family: 'Marck Script', cursive; font-size: 2.5rem; margin-top: 30px; opacity: 0.9; }
+    .hearts-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
     .heart {
-      position: absolute;
-      font-size: 24px;
-      animation: floatUp linear forwards;
-      opacity: 0.7;
+      position: absolute; font-size: 24px;
+      animation: floatUp linear forwards; opacity: 0.7;
     }
-
     @keyframes floatUp {
-      0% {
-        transform: translateY(100vh) scale(0.5) rotate(0deg);
-        opacity: 0;
-      }
-      20% {
-        opacity: 0.9;
-      }
-      100% {
-        transform: translateY(-10vh) scale(1.2) rotate(360deg);
-        opacity: 0;
-      }
+      0% { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0; }
+      20% { opacity: 0.9; }
+      100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
     }
-
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-
-    /* Адаптив */
     @media (max-width: 600px) {
-      .photo-card {
-        width: 160px;
-        height: 160px;
-      }
-      .reason-slider {
-        font-size: 1.1rem;
-        padding: 25px 20px;
-      }
+      .photo-card { width: 160px; height: 160px; }
+      .reason-slider { font-size: 1.1rem; padding: 25px 20px; }
     }
   </style>
 </head>
 <body>
-  <!-- Фоновая музыка (замени на свою) -->
   <audio id="bg-music" loop>
-    <source src="your-song.mp3" type="audio/mpeg">
+    <!-- ЗАМЕНИ НА СВОЙ ФАЙЛ: <source src="song.mp3" type="audio/mpeg"> -->
+    <source src="song.mp3" type="audio/mpeg">
     Твой браузер не поддерживает аудио.
   </audio>
 
-  <!-- Кнопка музыки -->
   <button class="music-btn" id="music-toggle" title="Включить музыку">🎵</button>
-
-  <!-- Контейнер для падающих сердечек -->
   <div class="hearts-container" id="hearts-container"></div>
 
-  <!-- Главный экран -->
   <section class="hero">
     <div class="hero-content">
-      <h1>С Днём Рождения,<br>Анна!</h1>
+      <h1>С Днём Рождения,<br>Настя!</h1>
       <div class="subtitle">✨ Ты — моё самое большое счастье ✨</div>
     </div>
     <div class="scroll-down" onclick="document.querySelector('.gallery').scrollIntoView({behavior:'smooth'})">↓</div>
   </section>
 
-  <!-- Галерея -->
   <section class="gallery">
     <h2>Наши мгновения</h2>
     <div class="photos">
@@ -409,7 +165,6 @@
     </div>
   </section>
 
-  <!-- Почему ты особенная (слайдер) -->
   <section class="reasons">
     <h2>Ты невероятна, потому что...</h2>
     <div class="reason-slider" id="reason-text">... твой смех лечит любую грусть.</div>
@@ -419,7 +174,6 @@
     </div>
   </section>
 
-  <!-- Таймер до конца дня рождения (установи свою дату) -->
   <section class="countdown">
     <h2 style="font-family:'Marck Script',cursive; font-size:2.5rem; color:#b13e5a;">🎂 Сегодня твой день!</h2>
     <p style="margin-bottom:10px; color:#5a2d3c;">Пусть он длится вечно...</p>
@@ -431,14 +185,15 @@
     <p style="margin-top:30px; color:#8a5a6a;">до конца этого волшебного дня 💫</p>
   </section>
 
-  <!-- Пожелание -->
   <section class="wish">
-    <p>Родная, пусть каждый твой день будет наполнен теплом, радостью и моей любовью. Ты — чудо, которое случилось со мной. Спасибо, что ты есть. С днём рождения!</p>
-    <div class="signature">— Твой [Имя]</div>
+    <p>Настя, сегодня особенный день — день, когда этот мир стал ярче, потому что в нём появилась ты. Ты удивительная: твоя нежность, твой смех, твоё умение видеть прекрасное даже в мелочах делают мою жизнь настоящей сказкой.</p>
+    <p>Я хочу, чтобы каждый твой день был наполнен теплом, улыбками и исполнением желаний. Пусть всё, о чём ты мечтаешь, обязательно сбудется. Ты заслуживаешь самого лучшего, и я счастлив быть рядом, делить с тобой радость и поддерживать в трудные минуты.</p>
+    <p>С днём рождения, моя прекрасная Настя! Оставайся такой же светлой, доброй и невероятно красивой. Я люблю тебя бесконечно. ❤️</p>
+    <div class="signature">— Твой Любимый кисик</div>
   </section>
 
   <script>
-    // ===== МУЗЫКА =====
+    // === МУЗЫКА ===
     const music = document.getElementById('bg-music');
     const musicBtn = document.getElementById('music-toggle');
     let musicPlaying = false;
@@ -452,35 +207,23 @@
         music.play().then(() => {
           musicBtn.innerHTML = '❤️';
           musicBtn.classList.add('playing');
-        }).catch(e => console.log('Автовоспроизведение заблокировано: ', e));
+        }).catch(e => console.log('Нажми на кнопку, чтобы включить музыку'));
       }
       musicPlaying = !musicPlaying;
     });
 
-    // Попытка автовоспроизведения (может блокироваться браузером)
-    window.addEventListener('load', () => {
-      music.play().then(() => {
-        musicPlaying = true;
-        musicBtn.innerHTML = '❤️';
-        musicBtn.classList.add('playing');
-      }).catch(() => {
-        // ждём действия пользователя
-      });
-    });
-
-    // ===== СЛАЙДЕР ПРИЧИН =====
+    // === СЛАЙДЕР ПРИЧИН ===
     const reasons = [
       "... твой смех лечит любую грусть.",
       "... ты умеешь слушать сердцем.",
       "... с тобой даже молчать уютно.",
-      "... ты видишь красоту в мелочах.",
+      "... ты вкусно пахнешь и обнимаешься.",
       "... твоя доброта не знает границ.",
-      "... ты делаешь меня лучше.",
-      "... ты — моя любимая сказка."
+      "... ты умеешь поддержать в трудную минуту.",
+      "... ты — моя самая любимая сказка."
     ];
     let currentReason = 0;
     const reasonEl = document.getElementById('reason-text');
-
     function updateReason() {
       reasonEl.style.opacity = '0';
       setTimeout(() => {
@@ -488,42 +231,31 @@
         reasonEl.style.opacity = '1';
       }, 200);
     }
-
     function nextReason() {
       currentReason = (currentReason + 1) % reasons.length;
       updateReason();
     }
-
     function prevReason() {
       currentReason = (currentReason - 1 + reasons.length) % reasons.length;
       updateReason();
     }
-
-    // Инициализация
     reasonEl.style.transition = 'opacity 0.3s';
     updateReason();
 
-    // ===== ТАЙМЕР ДО КОНЦА ДНЯ =====
+    // === ТАЙМЕР ДО КОНЦА ДНЯ ===
     function updateCountdown() {
       const now = new Date();
-      // Установи дату дня рождения: год, месяц (0-январь), день, часы=23:59:59
       const birthday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
-      // Если текущее время уже позже 23:59:59, таймер покажет 00:00:00
       let diff = birthday - now;
       if (diff < 0) diff = 0;
-
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+      document.getElementById('hours').textContent = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // ===== ПАДАЮЩИЕ СЕРДЕЧКИ =====
+    // === ПАДАЮЩИЕ СЕРДЕЧКИ ===
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
@@ -532,20 +264,10 @@
       heart.style.animationDuration = (Math.random() * 5 + 4) + 's';
       heart.style.fontSize = (Math.random() * 20 + 18) + 'px';
       document.getElementById('hearts-container').appendChild(heart);
-
-      setTimeout(() => {
-        heart.remove();
-      }, 8000);
+      setTimeout(() => heart.remove(), 8000);
     }
-
     setInterval(createHeart, 400);
-    // Начальный всплеск
-    for(let i=0; i<15; i++) {
-      setTimeout(createHeart, i * 100);
-    }
-
-    // ===== ПЛАВНАЯ ПРОКРУТКА ДЛЯ СТРЕЛКИ =====
-    // Уже задано в onclick
+    for(let i=0; i<15; i++) { setTimeout(createHeart, i * 100); }
   </script>
 </body>
 </html>
